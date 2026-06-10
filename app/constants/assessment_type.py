@@ -1,0 +1,11 @@
+STUDENT_NEEDS = "student_needs"
+DEVELOPMENT_TASK = "development_task"
+CAREER_INTEREST = "career_interest"
+LEARNING_STYLE = "learning_style"
+
+ALLOWED_ASSESSMENT_TYPES = {
+    STUDENT_NEEDS,
+    DEVELOPMENT_TASK,
+    CAREER_INTEREST,
+    LEARNING_STYLE,
+}
