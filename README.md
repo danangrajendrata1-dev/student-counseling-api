@@ -1,5 +1,7 @@
 # Student Counseling API / BK Smart Core API
 
+[![CI](https://github.com/danangrajendrata1-dev/student-counseling-api/actions/workflows/ci.yml/badge.svg)](https://github.com/danangrajendrata1-dev/student-counseling-api/actions/workflows/ci.yml)
+
 A professional backend API for a school counseling management system, built with FastAPI, PostgreSQL, SQLAlchemy, Alembic, JWT authentication, role-based authorization, and automated testing.
 
 This project is developed as a Junior Backend Developer Python portfolio project, focusing on clean architecture, maintainable code structure, secure authentication, database migrations, and test coverage.
