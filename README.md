@@ -271,6 +271,54 @@ Notes:
 * Database endpoints require a PostgreSQL database connection.
 * Docker Compose with PostgreSQL will be added in a future improvement.
 
+## Running with Docker Compose
+
+This project also supports Docker Compose for running the FastAPI application together with a PostgreSQL database.
+
+Build and start the services:
+
+```bash
+docker compose up --build
+```
+
+The API will be available at:
+
+```txt
+http://127.0.0.1:8000
+```
+
+The PostgreSQL database container uses the following local port mapping:
+
+```txt
+localhost:5434 -> container:5432
+```
+
+Test the health endpoint:
+
+```bash
+curl http://127.0.0.1:8000/health
+```
+
+Stop the services:
+
+```bash
+docker compose down
+```
+
+Remove containers and volumes if you want to reset the database:
+
+```bash
+docker compose down -v
+```
+
+Notes:
+
+* The API service runs Alembic migrations automatically before starting the FastAPI server.
+* The database service uses PostgreSQL 16 Alpine.
+* The API connects to PostgreSQL through Docker internal networking using `db:5432`.
+* The exposed PostgreSQL host port is `5434` to avoid conflict with a local PostgreSQL installation.
+
+
 ## API Documentation
 
 FastAPI automatically provides interactive API documentation:
@@ -364,6 +412,7 @@ Completed:
 * Git ignore rules
 * Requirements file
 * Dockerfile and basic Docker image support
+* Docker Compose setup with PostgreSQL
 
 Next planned improvements:
 
@@ -371,8 +420,10 @@ Next planned improvements:
 * API response consistency improvements
 * Deployment preparation
 * CI testing workflow
-* Docker Compose with PostgreSQL
 * Production-ready Docker configuration improvements
+* CI testing workflow
+* Deployment preparation
+
 
 ## Portfolio Notes
 
