@@ -33,7 +33,10 @@ def create_app() -> FastAPI:
     app.include_router(counseling_record_router)
     app.include_router(assessment_router)
     app.include_router(report_router)
-    app.include_router(debug_permission_router)
+    app.include_router(report_router)
+
+    if settings.app_env in {"development", "test"}:
+        app.include_router(debug_permission_router)
       
 
     return app
