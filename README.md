@@ -28,6 +28,7 @@ The goal of this project is to demonstrate backend development skills such as:
 * python-jose / JWT
 * passlib bcrypt
 * Pytest
+* Docker
 
 ## Main Features
 
@@ -238,6 +239,38 @@ The API will be available at:
 http://127.0.0.1:8000
 ```
 
+## Running with Docker
+
+Build the Docker image:
+
+```bash
+docker build -t student-counseling-api .
+```
+
+Run the container:
+
+```bash
+docker run --rm -p 8000:8000 --name student-counseling-api student-counseling-api
+```
+
+The API will be available at:
+
+```txt
+http://127.0.0.1:8000
+```
+
+Test the health endpoint:
+
+```bash
+curl http://127.0.0.1:8000/health
+```
+
+Notes:
+
+* The current Docker setup runs the FastAPI application container only.
+* Database endpoints require a PostgreSQL database connection.
+* Docker Compose with PostgreSQL will be added in a future improvement.
+
 ## API Documentation
 
 FastAPI automatically provides interactive API documentation:
@@ -330,15 +363,16 @@ Completed:
 * Environment example file
 * Git ignore rules
 * Requirements file
+* Dockerfile and basic Docker image support
 
 Next planned improvements:
 
-* Docker support
-* Docker Compose with PostgreSQL
 * More pagination and filtering improvements
 * API response consistency improvements
 * Deployment preparation
 * CI testing workflow
+* Docker Compose with PostgreSQL
+* Production-ready Docker configuration improvements
 
 ## Portfolio Notes
 
